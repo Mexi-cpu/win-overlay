@@ -1,0 +1,10 @@
+{
+  "title": "Winchallenge",
+  "progress": "1/7",
+  "timer": "00:43:09",
+  "tasks": [
+    { "text": "Minecraft Mario Party 0/1", "status": "todo" },
+    { "text": "GeoGuessr B2B 0/1", "status": "partial" },
+    { "text": "Fortnite 0/2", "status": "done" }
+  ]
+}
