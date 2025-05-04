@@ -20,7 +20,6 @@
   <p id="status"></p>
 
   <script>
-    // ✅ Hier Twitch-Name & Passwort setzen
     const authorizedUsers = [{ username: "streamer", password: "winpass123" }];
 
     async function loadData() {
@@ -34,4 +33,40 @@
       const pass = document.getElementById("password").value;
       const token = document.getElementById("token").value;
 
-      const auth = authorizedUsers.some
+      const auth = authorizedUsers.some(u => u.username === user && u.password === pass);
+      if (!auth) return alert("Login fehlgeschlagen");
+
+      const content = btoa(unescape(encodeURIComponent(document.getElementById("editor").value)));
+      const message = "Update data.json";
+      const repo = "USERNAME/REPO"; // <-- Anpassen!
+      const path = "data.json";
+
+      fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+        method: "GET",
+        headers: { Authorization: "token " + token }
+      })
+      .then(r => r.json())
+      .then(file => {
+        return fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+          method: "PUT",
+          headers: {
+            Authorization: "token " + token,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            message,
+            content,
+            sha: file.sha
+          })
+        });
+      })
+      .then(r => {
+        if (r.ok) document.getElementById("status").textContent = "Gespeichert!";
+        else document.getElementById("status").textContent = "Fehler beim Speichern.";
+      });
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
