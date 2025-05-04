@@ -20,7 +20,7 @@
   <p id="status"></p>
 
   <script>
-    const authorizedUsers = [{ username: "streamer", password: "winpass123" }];
+    const authorizedUsers = [{ username: "LetsAimZ", password: "twitchowner0305!" }];
 
     async function loadData() {
       const res = await fetch("../data.json");
@@ -38,7 +38,7 @@
 
       const content = btoa(unescape(encodeURIComponent(document.getElementById("editor").value)));
       const message = "Update data.json";
-      const repo = "USERNAME/REPO"; // <-- Anpassen!
+      const repo = "mexi-cpu/win-overlay"; // <-- Anpassen!
       const path = "data.json";
 
       fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
