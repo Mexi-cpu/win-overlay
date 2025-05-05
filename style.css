@@ -1,47 +1,79 @@
 body {
   margin: 0;
+  background-color: transparent;
   font-family: Arial, sans-serif;
-  background: transparent;
+  color: white;
 }
 
-.overlay-box {
-  background: white;
-  border-radius: 10px;
-  padding: 15px 20px;
-  width: 300px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+.top-left {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  text-align: left;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
+.title {
+  font-size: 28px;
   font-weight: bold;
-  font-size: 1.2em;
 }
 
-.timer {
-  margin: 8px 0;
-  font-family: monospace;
+.countdown {
+  font-size: 22px;
+  margin-top: 4px;
 }
 
-.task-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
+.top-right {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 20px;
 }
 
-.task-list li {
-  padding: 4px 0;
+.game-list {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
-.done {
-  color: #27ae60; /* green */
+.game {
+  font-size: 26px;
+  margin: 12px 0;
+  padding: 4px 12px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
-.partial {
-  color: #f1c40f; /* yellow */
+.green {
+  background-color: #00c853;
 }
 
-.todo {
-  color: black;
+.yellow {
+  background-color: #ffd600;
+  color: #000;
+}
+
+.black {
+  background-color: #212121;
+}
+
+.page-toggles {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.page-indicator {
+  width: 14px;
+  height: 30px;
+  background-color: #555;
+  border-radius: 3px;
+}
+
+.page-indicator.active {
+  background-color: #000;
 }

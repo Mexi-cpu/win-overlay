@@ -4,17 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Winchallenge Overlay</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="overlay.js"></script>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="overlay-box">
-    <div class="header">
-      <div class="title" id="title">Winchallenge</div>
-      <div class="progress" id="progress">1/7</div>
-    </div>
-    <div class="timer" id="timer">00:00:00</div>
-    <ul class="task-list" id="task-list"></ul>
+  <div class="top-left">
+    <div class="title">Winchallenge</div>
+    <div class="countdown" id="countdown">--:--:--</div>
   </div>
+
+  <div class="top-right" id="pageIndicator">1/1</div>
+
+  <div class="game-list" id="gameList">
+    <!-- Games will be rendered here -->
+  </div>
+
+  <div class="page-toggles" id="pageToggles">
+    <!-- Page indicators -->
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
